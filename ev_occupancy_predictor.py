@@ -462,7 +462,7 @@ def main():
     feature_cols = ['day_of_week', 'hour', 'is_weekend', 'is_holiday', 'ambient_temperature']
     
     train_scaled, val_scaled, scaler = scale_features(train_data, val_data, feature_cols)
-    test_scaled, _, _ = scale_features(test_data, test_data, feature_cols)
+    test_scaled = test_data.copy()
     test_scaled[feature_cols] = scaler.transform(test_data[feature_cols])
     
     # Step 4: Create sliding windows
