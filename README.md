@@ -36,7 +36,23 @@ pip install -r requirements.txt
 
 ## Usage
 
-Run the main script to execute the complete prediction pipeline:
+### Quick Demo
+
+Run a quick demonstration with 60 days of data:
+
+```bash
+python demo.py
+```
+
+This will:
+- Generate 60 days of synthetic data
+- Train an XGBoost model
+- Show evaluation metrics (MAE and RMSE)
+- Create a visualization plot
+
+### Full Pipeline
+
+Run the main script to execute the complete prediction pipeline with one year of data:
 
 ```bash
 python ev_occupancy_predictor.py
@@ -47,7 +63,7 @@ The script will:
 2. Split data into training, validation, and test sets
 3. Scale features using MinMaxScaler
 4. Create sliding window sequences for time-series analysis
-5. Train LSTM and XGBoost models
+5. Train LSTM and XGBoost models (if available)
 6. Evaluate models using MAE and RMSE metrics
 7. Generate visualization plots for the last 7 days
 
@@ -56,6 +72,9 @@ The script will:
 ```
 EV-Traffic-and-charging-demand-predictor/
 ├── ev_occupancy_predictor.py   # Main prediction pipeline
+├── demo.py                      # Quick demo script (60 days)
+├── test_xgboost.py             # Unit test for XGBoost (30 days)
+├── test_full_pipeline.py       # Full integration test (365 days)
 ├── requirements.txt             # Python dependencies
 ├── README.md                    # Project documentation
 └── .gitignore                   # Git ignore file
