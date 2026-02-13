@@ -68,7 +68,7 @@ def generate_synthetic_data(start_date='2025-01-01', num_days=365):
     
     # Create hourly timestamps for the specified period
     start = pd.to_datetime(start_date)
-    timestamps = pd.date_range(start=start, periods=num_days*24, freq='H')
+    timestamps = pd.date_range(start=start, periods=num_days*24, freq='h')
     
     # Initialize DataFrame
     df = pd.DataFrame({'timestamp': timestamps})
